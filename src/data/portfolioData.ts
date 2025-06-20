@@ -1,55 +1,38 @@
-export interface Project {
+export interface Proyecto {
   id: number;
-  title: string;
-  summary: string;
-  images: string[];
-  tags: string[];
-  details: {
-    challenge: string;
-    solution: string;
-    impact: string[];
+  titulo: string;
+  resumen: string;
+  imagenes: string[];
+  etiquetas: string[];
+  detalles: {
+    reto: string;
+    solucion: string;
+    impacto: string[];
   };
-  externalLink?: {
-    title: string;
+  enlaceExterno?: {
+    titulo: string;
     url: string;
   };
 }
-export const projects: Project[] = [
+
+export const proyectos: Proyecto[] = [
   {
     id: 1,
-    title: "Customer Insights Dashboard for E-Commerce",
-    summary: "Developed an interactive Power BI dashboard to analyze customer behavior, sales trends, and marketing performance for an e-commerce company.",
-    images: [
-      "https://example.com/dashboard1.jpg",
-      "https://example.com/dashboard2.jpg",
-      "https://example.com/dashboard3.jpg"
-    ],
-    tags: ["Power BI", "SQL", "Data Visualization", "Customer Analytics", "Business Intelligence"],
-    details: {
-      challenge: "The company lacked a centralized reporting system to track customer engagement, purchase patterns, and marketing campaign effectiveness.",
-      solution: "Designed and implemented a Power BI dashboard integrating data from Google Analytics, CRM systems, and sales records, providing real-time insights.",
-      impact: [
-        "Increased marketing ROI by 25% through data-driven campaign adjustments.",
-        "Enhanced customer segmentation, leading to a 15% improvement in personalized recommendations and repeat purchases."
+    titulo: "HoneyX: Sistema de Honeypot distribuido",
+    resumen: "Desarrollo e implementación de un sistema de honeypot avanzado para la detección, análisis y alerta en tiempo real de amenazas cibernéticas en un entorno controlado.",
+    etiquetas: ["Ciberseguridad", "Honeypot", "Docker", "Docker-Compose", "Hacking-web", "Grafana", "Prometheus", "Node_Exporter"],
+    detalles: {
+      reto: "A veces contamos con poca seguridad informática, por lo que decidí desarrollar este proyecto para poder tener un honeypot distribuido en 2 servidores y poder visualizar todo lo que sucedía en tiempo real",
+      solucion: "Implementación de una arquitectura modular de honeypot que integra múltiples servicios como FakeSSH, Apache, MySQL, ProFTPD, Loki, Grafana, Prometheus, Promtail y Node_Exporter, orquestados mediante Docker Compose para un despliegue rápido y fácil mantenimiento.",
+      impacto: [
+        "Detección temprana y clasificación de diversos ciberataques, incluyendo fuerza bruta, exploits web y ataques FTP.",
+        "Proporciona un alto aprendizaje, con un fácil despliegue explicado en el mismo repositorio",
+        "Mejora la seguridad de la red mediante los ataques que se visualizan en esta máquina honeypot."
       ]
-    }
-  },
-  {
-    id: 2,
-    title: "Automated Financial Reporting System",
-    summary: "Created an automated ETL pipeline to streamline financial reporting, reducing manual data processing time for a financial services firm.",
-    images: [
-      "https://example.com/finance1.jpg",
-      "https://example.com/finance2.jpg"
-    ],
-    tags: ["Python", "ETL", "Data Engineering", "Finance", "Power BI", "Automation"],
-    details: {
-      challenge: "The finance team spent excessive time manually aggregating and reconciling data from multiple sources for monthly reports.",
-      solution: "Developed a Python-based ETL pipeline that extracted, cleaned, and loaded financial data into Power BI, automating report generation.",
-      impact: [
-        "Reduced reporting time from 5 days to a few hours, improving efficiency.",
-        "Minimized errors in financial reports, ensuring data accuracy for decision-making."
-      ]
+    },
+    enlaceExterno: {
+      titulo: "Repositorio en GitHub",
+      url: "https://github.com/GutiFer4/HoneyX"
     }
   }
 ];
