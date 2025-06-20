@@ -1,25 +1,26 @@
 export const heroData = {
-  name: 'John Doe',
-  title: 'Full-Stack Developer',
-  description: 'I build scalable web applications and transform raw data into meaningful insights that drive business success.',
-  profilePicture: 'https://example.com/profilepic.jpg',
+  name: 'Marcos Gutiérrez',
+  title: 'Especialista en Ciberseguridad y Hacking Ético',
+  description: 'Formado en SMR, ASIR (especialidad en ciberseguridad) y actualmente he finalizado un Máster en Ciberseguridad en DIGITECH. Apasionado por proteger sistemas, analizar vulnerabilidades y crear soluciones seguras.',
+  profilePicture: '/assets/images/marcos-gutierrez.jpg',
   skills: [
-    'JavaScript',
-    'React',
-    'Node.js',
-    'SQL',
+    'Ciberseguridad',
+    'Hacking Ético',
+    'Blue Team',
+    'Red Team',
+    'Pentesting Web',
+    'Análisis Forense',
+    'Monitorización',
+    'Firewalls',
+    'Linux',
     'Python',
-    'Power BI',
-    'DAX',
-    'ETL',
-    'Data Modeling',
-    'API Development',
-    'Cloud Computing',
-    'Machine Learning'
+    'Scripting Bash / PowerShell',
+    'Incidentes y Respuesta',
+    'Virtualización'
   ],
   contact: {
-    github: 'https://github.com/johndoe',
-    linkedin: 'https://www.linkedin.com/in/johndoe/',
-    email: 'johndoe@example.com'
+    github: 'https://github.com/GutiFer4',
+    linkedin: 'https://www.linkedin.com/in/marcos-gutierrez-fernandez/'
   }
 };
+
