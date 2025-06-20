@@ -1,12 +1,12 @@
 export const config = {
-  siteTitle: 'John Doe Portfolio',
-  description: 'Hi, I am John Doe, a passionate web developer and data analyst. I thrive on solving problems and building innovative solutions with modern technology.',
-  author: 'John Doe',
-  contactEmail: 'johndoe@example.com',
-  keywords: 'portfolio, business intelligence, data analysis, Power BI Reports, Software Engineer, Web Developer',
+  siteTitle: 'Marcos Gutiérrez Portfolio',
+  description: 'Soy Marcos Gutiérrez, especializado en Ciberseguridad y Hacking Ético. Formación en SMR, ASIR (especialidad en ciberseguridad) y con un Master finalizado en Ciberseguridad en DIGITECH. Aquí muestro mis proyectos y experiencia.',
+  author: 'Marcos Gutiérrez',
+  contactEmail: 'marcos.gutifer@gmail.com',
+  keywords: 'ciberseguridad, hacking ético, SMR, ASIR, DIGITECH, pentesting, seguridad informática, portfolio',
   favicon: '/favicon.svg',
   social: {
-    linkedin: 'https://www.linkedin.com/in/johndoe/',
-    github: 'https://github.com/johndoe'
+    linkedin: 'https://www.linkedin.com/in/marcos-gutierrez-fernandez/',
+    github: 'https://github.com/GutiFer4'
   }
 };
