@@ -1,4 +1,4 @@
-# 🚀 Personal Portfolio
+# 🚀 Personal Portfolio 
 
 This is my **personal portfolio website**, where I showcase some of the work that I do not include in my resume. I built this project to explore **modern front-end technologies**, improve my **deployment skills**, and experiment with **UI frameworks**.
 
@@ -99,7 +99,7 @@ export const jobs = [
   }
 ];
 ```
-and so on...
+and so on....
 
 ### `/data/projects.ts`
 Defines the projects showcased in the portfolio. Each project includes an ID, title, summary, images, tags, and details.
