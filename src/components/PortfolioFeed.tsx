@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
-import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import { projects } from '@/data/portfolioData'; // Importing the projects data
+import { projects, Proyecto } from '@/data/portfolioData';
 
-const ProjectCarousel = ({ images }: { images: string[] }) => {
+const ProjectCarousel = ({ imagenes }: { imagenes: string[] }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel();
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
@@ -22,7 +21,7 @@ const ProjectCarousel = ({ images }: { images: string[] }) => {
         setCanScrollNext(emblaApi.canScrollNext());
       });
 
-      // Initial state
+      // Estado inicial
       setCanScrollPrev(emblaApi.canScrollPrev());
       setCanScrollNext(emblaApi.canScrollNext());
     }
@@ -33,12 +32,12 @@ const ProjectCarousel = ({ images }: { images: string[] }) => {
       <div className="relative">
         <div ref={emblaRef} className="overflow-hidden rounded-lg">
           <div className="flex">
-            {images.map((image, index) => (
-              <div className="relative flex-[0_0_100%]" key={index}>
+            {imagenes.map((img, idx) => (
+              <div className="relative flex-[0_0_100%]" key={idx}>
                 <div className="aspect-video">
                   <img
-                    src={image}
-                    alt={`Slide ${index + 1}`}
+                    src={img}
+                    alt={`Imagen ${idx + 1}`}
                     className="h-full w-full object-cover"
                   />
                 </div>
@@ -72,23 +71,23 @@ const ProjectCarousel = ({ images }: { images: string[] }) => {
         </Button>
       </div>
 
-      {/* Thumbnails */}
+      {/* Miniaturas */}
       <div className="flex gap-2 overflow-auto pb-2">
-        {images.map((image, index) => (
+        {imagenes.map((img, idx) => (
           <button
-            key={index}
+            key={idx}
             className={cn(
               "relative flex-0 min-w-[100px] cursor-pointer overflow-hidden rounded-md border-2 transition-all",
-              selectedIndex === index
+              selectedIndex === idx
                 ? "border-primary"
                 : "border-transparent opacity-70 hover:opacity-100"
             )}
-            onClick={() => emblaApi?.scrollTo(index)}
+            onClick={() => emblaApi?.scrollTo(idx)}
           >
             <div className="aspect-video w-[100px]">
               <img
-                src={image}
-                alt={`Thumbnail ${index + 1}`}
+                src={img}
+                alt={`Miniatura ${idx + 1}`}
                 className="h-full w-full object-cover"
               />
             </div>
@@ -99,22 +98,23 @@ const ProjectCarousel = ({ images }: { images: string[] }) => {
   );
 };
 
-const ProjectCard = ({ project }: { project: Project }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+const ProjectCard = ({ project }: { project: Proyecto }) => {
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <Card className="mb-8 overflow-hidden">
       <CardHeader>
-        <h3 className="text-2xl font-bold">{project.title}</h3>
+        <h3 className="text-2xl font-bold">{project.titulo}</h3>
       </CardHeader>
       <CardContent className="space-y-6">
-        <ProjectCarousel images={project.images} />
+        {/* Carousel solo si hay imágenes */}
+        {project.imagenes?.length > 0 && <ProjectCarousel imagenes={project.imagenes} />}
 
         <div className="space-y-4">
-          <p className="text-muted-foreground">{project.summary}</p>
-          
+          <p className="text-muted-foreground">{project.resumen}</p>
+
           <div className="flex flex-wrap gap-2">
-            {project.tags.map((tag) => (
+            {project.etiquetas.map((tag) => (
               <Badge key={tag} variant="secondary">
                 {tag}
               </Badge>
@@ -123,50 +123,47 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
           <div
             className={`space-y-4 overflow-hidden transition-all duration-500 ease-in-out ${
-              isExpanded ? 'max-h-[1000px]' : 'max-h-0'
+              expanded ? 'max-h-[1000px]' : 'max-h-0'
             }`}
           >
             <div className="rounded-lg bg-muted/50 p-4 space-y-4">
               <div>
-                <h4 className="font-semibold mb-2">Challenge</h4>
-                <p className="text-muted-foreground">{project.details.challenge}</p>
+                <h4 className="font-semibold mb-2">Reto</h4>
+                <p className="text-muted-foreground">{project.detalles.reto}</p>
               </div>
-              
+
               <div>
-                <h4 className="font-semibold mb-2">Solution</h4>
-                <p className="text-muted-foreground">{project.details.solution}</p>
+                <h4 className="font-semibold mb-2">Solución</h4>
+                <p className="text-muted-foreground">{project.detalles.solucion}</p>
               </div>
-              
+
               <div>
-                <h4 className="font-semibold mb-2">Impact</h4>
+                <h4 className="font-semibold mb-2">Impacto</h4>
                 <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                  {project.details.impact.map((item, index) => (
-                    <li key={index}>{item}</li>
+                  {project.detalles.impacto.map((item, i) => (
+                    <li key={i}>{item}</li>
                   ))}
                 </ul>
               </div>
-              {project.externalLink && (
+
+              {project.enlaceExterno && (
                 <Button variant="link" className="flex items-center gap-2 text-md" asChild>
-                  <a href={project.externalLink.url} target="_blank" rel="noopener noreferrer">
-                    {project.externalLink.title}
+                  <a href={project.enlaceExterno.url} target="_blank" rel="noopener noreferrer">
+                    {project.enlaceExterno.titulo}
                   </a>
                 </Button>
               )}
             </div>
           </div>
 
-          <Button
-            variant="ghost"
-            className="w-full"
-            onClick={() => setIsExpanded(!isExpanded)}
-          >
-            {isExpanded ? (
+          <Button variant="ghost" className="w-full" onClick={() => setExpanded(!expanded)}>
+            {expanded ? (
               <>
-                <ChevronUp className="mr-2 h-4 w-4" /> Show Less
+                <ChevronUp className="mr-2 h-4 w-4" /> Mostrar menos
               </>
             ) : (
               <>
-                <ChevronDown className="mr-2 h-4 w-4" /> See More
+                <ChevronDown className="mr-2 h-4 w-4" /> Ver más
               </>
             )}
           </Button>
@@ -181,12 +178,12 @@ const PortfolioFeed = () => {
     <section className="relative z-10 min-h-screen bg-background/95 px-4 py-24 backdrop-blur-sm">
       <div className="mx-auto max-w-3xl">
         <h2 className="mb-12 text-center text-4xl font-bold tracking-tight">
-          Side Projects
+          Proyectos
         </h2>
-        
+
         <div className="space-y-8">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+          {projects.map((proj) => (
+            <ProjectCard key={proj.id} project={proj} />
           ))}
         </div>
       </div>
