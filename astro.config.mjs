@@ -3,7 +3,7 @@ import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  site: 'https://GutiFer4.github.io',
+  site: 'https://gutifer4.github.io',
   output: 'static',
   integrations: [
     react(),
