@@ -2,7 +2,7 @@ export const heroData = {
   name: 'Marcos Gutiérrez Fernández',
   title: '🛡️ Ciberseguridad | 🖥️ Administrador de Sistemas | 🔵 Blue Team',
   description: 'Formación en SMR y ASIR con especialización en Ciberseguridad. Recientemente finalicé un Máster en Ciberseguridad en DIGITECH. Apasionado por la protección de sistemas, el análisis de vulnerabilidades y el desarrollo de soluciones seguras.',
-  profilePicture: './assets/images/perfil.jpg',
+  profilePicture: '/perfil.jpg',
   skills: [
     'Ciberseguridad',
     'Hacking Ético',
