@@ -16,8 +16,8 @@ export const jobs: Job[] = [
       "Cableé y configuré un Centro de Datos (CPD) para la instalación de nuevos servidores, colaborando en su puesta en marcha.",
       "Preparé nuevos espacios de trabajo y salas de reuniones, asegurando que los empleados contaran con todos los recursos necesarios.",
       "Maqueté y configuré equipos informáticos, adaptando sistemas según las necesidades específicas de los usuarios.",
-      "Gestioné el inventario de TI, garantizando que los empleados dispusieran de las herramientas y materiales necesarios para el correcto desarrollo de su puesto."
-      "Administré el almacenamiento y seguridad de backups, asegurando su correcto almacenamiento y preparación para traslado fuera de sitio."
+      "Gestioné el inventario de TI, garantizando que los empleados dispusieran de las herramientas y materiales necesarios para el correcto desarrollo de su puesto.",
+      "Administré el almacenamiento y seguridad de backups, asegurando su correcto almacenamiento y preparación para traslado fuera de sitio.",
       "Supervisé alertas de seguridad y colaboré en la respuesta a incidencias utilizando herramientas de protección y monitorización."
     ]
   },
