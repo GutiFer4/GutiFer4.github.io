@@ -15,7 +15,7 @@ export interface Proyecto {
   };
 }
 
-export const proyectos: Proyecto[] = [
+export const projects: Proyecto[] = [
   {
     id: 1,
     titulo: "HoneyX: Sistema de Honeypot distribuido",
