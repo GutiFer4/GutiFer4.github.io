@@ -1,3 +1,4 @@
+import { config } from '../config';
 export const heroData = {
   name: 'Marcos Gutiérrez Fernández',
   title: '🛡️ Ciberseguridad | 🖥️ Administrador de Sistemas | 🔵 Blue Team',
@@ -20,7 +21,8 @@ export const heroData = {
   ],
   contact: {
     github: 'https://github.com/GutiFer4',
-    linkedin: 'https://www.linkedin.com/in/marcos-gutierrez-fernandez/'
+    linkedin: 'https://www.linkedin.com/in/marcos-gutierrez-fernandez/',
+    email: config.contactEmail
   }
 };
 
