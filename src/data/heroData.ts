@@ -1,4 +1,4 @@
-import { config } from '../config';
+import { config } from './config';
 export const heroData = {
   name: 'Marcos Gutiérrez Fernández',
   title: '🛡️ Ciberseguridad | 🖥️ Administrador de Sistemas | 🔵 Blue Team',
