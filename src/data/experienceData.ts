@@ -7,6 +7,22 @@ export type Job = {
 
 export const jobs: Job[] = [
   {
+    title: "Técnico de Soporte IT",
+    company: "GCS Informática y Electricidad",
+    dates: "09/2025 - 10/2025",
+    description: [
+      "Maquetación, configuración e implementación de equipos informáticos.",
+      "Configuración de servicios y resolución de incidencias hardware y software, tanto onsite como remoto.",
+      "Administración de usuarios, grupos y equipos mediante Active Directory.",
+      "Gestión de cuentas, dispositivos y políticas a través de Microsoft Azure.",
+      "Instalación y conexión de cableado de fibra óptica, incluyendo parcheo de switches, conexionado de red y verificación de la correcta conectividad del sistema.",
+      "Participación en proyectos de migración de red, colaborando en la sustitución y configuración de equipos de red y comprobando la correcta operatividad de la infraestructura.",
+      "Entrega y gestión de material desde almacén para las diferentes necesidades de los clientes.",
+      "Sustitución y puesta en marcha de equipos en puestos de trabajo (monitores, periféricos y estaciones), asegurando su correcto funcionamiento.",
+      "Verificación y diagnóstico de puestos de trabajo, comprobando conectividad de red, cableado, hardware y demás componentes críticos."
+    ]
+  },
+  {
     title: "Técnico de Sistemas",
     company: "VIEWNEXT",
     dates: "03/2022 - 06/2022",
